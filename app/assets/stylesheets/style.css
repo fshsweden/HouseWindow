@@ -1,0 +1,91 @@
+body {
+  background-color: #2a2c33;
+  color: #333333;
+  font-family: "Playfair Display", Helvetica, Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 1.42857;
+  margin: 0; }
+
+.main-content div {
+  display: block; }
+  .main-content div h2 {
+    display: flex;
+    justify-content: center; }
+
+.section_heading_title {
+  background-position: center top;
+  background-repeat: no-repeat;
+  margin: 0px auto 65px;
+  padding: 0 15px;
+  position: relative;
+  width: 97.4%; }
+  .section_heading_title h1 {
+    line-height: 42px;
+    margin: 0 0 10px;
+    text-align: center; }
+  .section_heading_title p {
+    margin: 0 0 10px;
+    text-align: center; }
+
+.pagetitle-separator {
+  background: #cccccc !important;
+  height: 1px;
+  margin: 23px auto 45px;
+  width: 250px; }
+
+.pagetitle-separator-border {
+  width: 101px;
+  height: 3px;
+  margin: 0 auto;
+  position: relative;
+  top: -2px; }
+
+.pagetitle-separator-box {
+  height: 10px;
+  margin: 23px auto 45px;
+  position: relative;
+  top: -4px;
+  transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  width: 10px; }
+
+.service-section {
+  padding: 10px 0 10px; }
+
+.service-box {
+  display: block;
+  transition: all 300ms ease-out 0s;
+  margin-bottom: -120px;
+  position: relative;
+  z-index: 0; }
+  .service-box img {
+    border: 2px solid #FFFFFF;
+    border-radius: 100%;
+    margin: 0 auto 16px;
+    transition: all 600ms ease-out 0s;
+    width: 200px;
+    height: 200px;
+    transform: rotate(360); }
+
+.service-effect:hover .service-box img {
+  -webkit-transform: rotate(360deg);
+  -moz-transform: rotate(360deg);
+  -o-transform: rotate(360deg);
+  -ms-transform: rotate(360deg); }
+
+/* Edit by Harish For Service Image*/
+.service-area {
+  margin: 0px 0 60px;
+  padding: 127px 30px 30px;
+  transition: background 0.3s ease-in-out 0s; }
+  .service-area h2 {
+    font-size: 24px;
+    line-height: 30px;
+    margin: 0 0 11px; }
+  .service-area p {
+    font-size: 16px;
+    line-height: 28px;
+    margin-bottom: 27px;
+    margin-top: 0;
+    padding: 0px; }
