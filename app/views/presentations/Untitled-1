@@ -1,0 +1,23 @@
+spec
+
+
+/
+    Not logged in: show info (+register/login)
+    Logged in:  show default presentation (får se vad vi gör om det finns > 1 sen)
+
+/page/n 
+
+    Not logged in / Logged in: show presentation page 
+
+    Logged in:  Add link to EDIT
+
+
+/edit/n 
+
+    Logged in: 
+            link to add picture
+            link to change layout (number)
+
+    Not logged in: ERROR
+
+

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <title>HouseWindow</title>
+  <%= csrf_meta_tags %>
+  <%= csp_meta_tag %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+
+  <style>
+    body {
+      background-color: #4B7399;
+      padding: 4px;
+      font-family: Roboto, Verdana, Helvetica, Arial;
+      font-size: 1rem;
+    }
+
+
+    .wrapper {
+      width: 75%;
+      margin: 0 auto;
+      background-color: #FFF;
+      padding: 20px 40px;
+      /* border: solid 1px black; */
+      margin-top: 20px;
+
+      display: grid;
+      max-width: 960px;
+      /* border: 2px solid black; */
+      grid-template-columns: auto;
+      grid-template-rows: auto;
+      grid-template-areas:
+        "content"
+        "meta";
+      margin-left: auto;
+      margin-right: auto;
+      /* border: 1px solid darkgray; */
+      border-radius: 10px;
+    }
+
+    @media screen and (max-width: 992px) {
+      .wrapper {
+
+        margin: 0;
+        width: 98%;
+        background-color: #FFF;
+        padding: 10px 10px;
+        /* border: solid 1px black; */
+        display: grid;
+
+        /* border: 2px solid black; */
+        grid-template-columns: auto;
+        grid-template-rows: auto;
+        grid-template-areas:
+          "content"
+          "meta";
+        margin-left: auto;
+        margin-right: auto;
+        /* border: 1px solid darkgray; */
+        border-radius: 10px;
+      }
+    }
+
+    .header {}
+
+    .content {
+      display: grid;
+      /* border: 2px solid blue; */
+    }
+
+    .meta {
+      grid-area: meta;
+      /* border: 2px solid green; */
+    }
+  </style>
+
+</head>
+
+<body>
+
+  <div class="wrapper">
+
+    <div class="meta">
+      <% if user_signed_in? %>
+      <%= link_to "Logout", destroy_user_session_path, :method => :delete %>
+      <% else %>
+      <%= link_to "Sign In", new_user_session_path, :method => :post %>
+      <%= link_to "Register", new_user_registration_path %>
+      <% end %>
+    </div>
+
+    <div class="content">
+      <%= yield %>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>

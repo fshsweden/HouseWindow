@@ -1,0 +1,5 @@
+<h1> This is the NEW INFO page for all visitors </h1>
+<h3>latest Ads</h3>
+<% Presentation.limit(10).each do |p| %>
+<%= link_to 'Show', p %>
+<% end %>

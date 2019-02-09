@@ -1,0 +1,146 @@
+/*
+* Theme Name: Wallstreet
+* Theme URI: https://webriti.com/wallstreet-lite-version-details-page/
+* Description: WallStreet is a Business WordPress Theme that contains many features for customizing your website as you need. Already, thousands of users are enjoying this theme because it is designed for multiple businesses like corporates, law firms, digital media agencies, architecture firms, personal blogs, portfolios and freelancer websites. The theme is developed using Bootstrap 3 CSS framework which makes it friendly for all devices such as mobiles, tablets, and laptops, etc. In WallStreet Lite, you can easily set a Featured Banner / Slide, Social Icons in the header, Contact Information, Services, Portfolio, and a 4-column widgetized footer. Several page templates are also added: Homepage and a Full Width page template. In the premium version, you will get 2 color skins (Lite and Dark), 10 predefined color schemes, a feature for creating your own custom color scheme, an eye-catching slider, and Services, Testimonials, Portfolio, Clients / Sponsors, Blog Layouts, Layout Manager and Latest News. You will also get various page templates including About, Services, Portfolio, Blog and Contact Us. The theme has support for popular plugins such as WPML, Polylang and JetPack Gallery Extensions. Just navigate to Appearance / Customize to start customizing. Both the lite and premium versions of WallStreet theme come with various locales. Check the premium version theme demo at https://webriti.com/demo/wp/wallstreet
+* Version: 1.7.8.5
+* Author: webriti
+* Author URI: https://www.webriti.com
+* Tags: full-width-template, threaded-comments, right-sidebar, one-column, two-columns, custom-menu, sticky-post, translation-ready,featured-images, blog, photography, entertainment,footer-widgets
+* License: GNU General Public License v3.0
+* License URI: http://www.gnu.org/licenses/gpl-3.0.html
+* Copyright (c) 2016 webriti. All rights reserved.
+* Text Domain: wallstreet
+*/
+
+body {
+    background-color: #2a2c33;
+    color: #333333;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857;
+    margin: 0;
+}
+
+
+.main-content {
+    font-family: "Playfair Display";
+
+    div {
+        display: block;
+
+        h2 {
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+
+/*Homepage Service Section--------------------------------------------------------------------------*/
+.section_heading_title {
+    background-position: center top;
+    background-repeat: no-repeat;
+    margin: 0px auto 65px;
+    padding: 0 15px;
+    position: relative;
+    width: 97.4%;
+
+    h1 {
+        font-family: 'Roboto';
+        font-weight: 500;
+        font-size: 36px;
+        font-weight: normal;
+        line-height: 42px;
+        margin: 0 0 10px;
+        text-align: center;
+
+    }
+
+    p {
+        font-family: 'Roboto';
+        font-weight: 400;
+        font-size: 20px;
+        line-height: 25px;
+        margin: 0 0 10px;
+        text-align: center;
+
+    }
+
+}
+
+.pagetitle-separator {
+    background: #cccccc !important;
+    height: 1px;
+    margin: 23px auto 45px;
+    width: 250px;
+}
+
+.pagetitle-separator-border {
+    width: 101px;
+    height: 3px;
+    margin: 0 auto;
+    position: relative;
+    top: -2px;
+}
+
+.pagetitle-separator-box {
+    height: 10px;
+    margin: 23px auto 45px;
+    position: relative;
+    top: -4px;
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    width: 10px;
+}
+
+.service-section {
+    padding: 10px 0 10px;
+}
+
+.service-box {
+    display: block;
+    transition: all 300ms ease-out 0s;
+    margin-bottom: -120px;
+    position: relative;
+    z-index: 0;
+
+    img {
+        border: 2px solid #FFFFFF;
+        border-radius: 100%;
+        margin: 0 auto 16px;
+        transition: all 600ms ease-out 0s;
+        width: 200px;
+        height: 200px;
+        transform: rotate(360);
+    }
+}
+
+.service-effect:hover .service-box img {
+    -webkit-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    -ms-transform: rotate(360deg);
+}
+
+/* Edit by Harish For Service Image*/
+.service-area {
+    margin: 0px 0 60px;
+    padding: 127px 30px 30px;
+    transition: background 0.3s ease-in-out 0s;
+    font-family: 'Roboto';
+    font-weight: 400;
+    text-align: center;
+
+    h2 {
+        font-size: 24px;
+        line-height: 30px;
+        margin: 0 0 11px;
+    }
+
+    p {
+        font-size: 16px;
+        line-height: 28px;
+        margin-bottom: 27px;
+        margin-top: 0;
+        padding: 0px;
+    }
+}

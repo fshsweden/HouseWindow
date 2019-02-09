@@ -1,0 +1,8 @@
+<% if @pres.size > 0 %>
+    <% @pres.each do |p| %>
+        <%= link_to p.title, p %>
+    <% end %>
+    <%= link_to "Go to default presentation", presentation_path(@pres.first) %>
+<% else %>
+
+<% end %>

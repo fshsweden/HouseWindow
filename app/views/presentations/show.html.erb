@@ -1,0 +1,167 @@
+<div id="topheader">
+    <!-- prefer "nav" instead of "div" - both works though! -->
+    <!-- wrapping navbar -->
+    <!-- navbar-expand-lg   shows navbar on "lg" and larger -->
+    <!-- navbar-light       link colours are grey instead of blue -->
+    <!-- bg-light           background is grey -->
+    <nav class="navbar navbar-expand-sm navbar-light">
+
+        <!-- navbar-brand  -->
+        <a class="navbar-brand" href="#">
+            <%= best_in_place_if current_user, @presentation, :title, :as => :input %>
+        </a>
+
+        <!-- navbar-toggler -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- collapse -->
+        <!-- navbar-collapse   change when their content collapses behind a button -->
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <!-- set class "active" -->
+
+                    <% if current_user %>
+                    <%= link_to "Mina övriga annonser", presentations_path %>
+                    <% else %>
+
+                    <% end %>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Prislista</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<!-- carousel    -->
+<!-- slide       -->
+<!-- data-ride   -->
+<div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel" data-interval="2000">
+
+    <!-- carousel-inner -->
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <%= image_tag "pic1.jpg", :class=>"d-block w-100", :alt => "First slide" %>
+        </div>
+        <div class="carousel-item">
+            <%= image_tag "pic2.jpg", :class=>"d-block w-100", :alt => "First slide" %>
+        </div>
+        <div class="carousel-item">
+            <%= image_tag "pic3.jpg", :class=>"d-block w-100", :alt => "First slide" %>
+        </div>
+    </div>
+
+    <!-- carousel-indicators -->
+    <ol class="carousel-indicators list-inline">
+        <!-- data-slide-to -->
+        <!-- active        -->
+        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="list-inline-item active"></li>
+        <!-- data-slide-to -->
+        <li data-target="#carouselExampleIndicators" data-slide-to="1" class="list-inline-item"></li>
+        <!-- data-slide-to -->
+        <li data-target="#carouselExampleIndicators" data-slide-to="2" class="list-inline-item"></li>
+    </ol>
+
+    <!-- carousel-control-prev -->
+    <!-- data-slide            -->
+    <!-- role                  -->
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+        <!-- carousel-control-prev-icon -->
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+    </a>
+
+    <!-- carousel-control-next -->
+    <!-- data-slide            -->
+    <!-- role                  -->
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+        <!-- carousel-control-next-icon -->
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+    </a>
+
+</div>
+
+<div class="main-content">
+    <div>
+        <h2 class="subhead">
+            <%= best_in_place_if current_user, @presentation, :shorttext, :as => :input %>
+        </h2>
+        <%= best_in_place_if current_user, @presentation, :prez1, :as => :input %>
+    </div>
+</div>
+
+<div class="service-section">
+    <div class="section_heading_title">
+        <h1>Bokningskalender</h1>
+        <div class="pagetitle-separator">
+            <div class="pagetitle-separator-border">
+                <div class="pagetitle-separator-box"></div>
+            </div>
+        </div>
+
+        <% @meetings = Booking.all %>
+        <%= month_calendar events: @meetings do |date, meetings| %>
+        <%= date.day %>
+        <% meetings.each do |meeting| %>
+        <div>
+            <%= meeting.name %>
+        </div>
+        <% end %>
+        <% end %>
+    </div>
+
+    <div class="center">
+        <div class="service-effect">
+            <div class="service-box">
+                <%= image_tag "service.jpg",:class=>"img-responsive service-box-image",:alt => "Sleek &amp; Beautiful" %>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-area">
+        <%= @presentation.prez1 %>
+    </div><!-- / service-area -->
+
+    <div class="center">
+        <div class="service-effect">
+            <div class="service-box">
+                <%= image_tag "service2.jpg",:class=>"img-responsive service-box-image",:alt => "Sleek &amp; Beautiful" %>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-area">
+        <%= @presentation.prez2 %>
+    </div><!-- / service-area -->
+
+
+    <div class="center">
+        <div class="service-effect">
+            <div class="service-box">
+                <%= image_tag "service3.jpg",:class=>"img-responsive service-box-image",:alt => "Sleek &amp; Beautiful" %>
+            </div>
+        </div>
+    </div>
+
+    <div class="service-area">
+        <%= best_in_place_if current_user, @presentation, :prez2 , :as => :input %>
+    </div><!-- / service-area -->
+</div>
+
+<% if current_user %>
+<%= link_to 'Edit', edit_presentation_path(@presentation) %> |
+<% end %>
+
+<script>
+    $(document).ready(function () {
+        /* Activating Best In Place */
+        console.log("activating best in place");
+        jQuery(".best_in_place").best_in_place();
+    });
+</script>
